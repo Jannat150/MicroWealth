@@ -1,3 +1,22 @@
+# Flutter & Dart Fundamentals (Short)
+
+Flutter uses a **widget-based architecture** where the entire UI is built from widgets and rendered by Flutter’s own high-performance engine, giving **consistent visuals and smooth performance** across Android and iOS from a single codebase.
+
+Flutter follows a **reactive model** powered by Dart: when **state changes**, Flutter **rebuilds only the affected widgets** instead of the whole screen.
+
+## StatelessWidget vs StatefulWidget (TaskEase To-Do)
+- **StatelessWidget:** UI that doesn’t change (e.g., title, icons, static layout). Fewer rebuilds → better performance.
+- **StatefulWidget:** UI that changes with interaction/data (e.g., task list). Updates happen when tasks are added/removed.
+
+## Fixing “Laggy To-Do App”
+Lag was caused by **deep widget nesting** and **poor state placement**, triggering large rebuilds. The solution:
+- Split UI into smaller widgets
+- Keep state close to where it’s used
+- Rebuild only the task list when tasks change
+
+## Dart Async
+Dart’s **async** operations keep the UI responsive by running heavy work without blocking rendering.
+
 # Translating Figma Design into a Functional Flutter UI
 
 ## How the Figma Prototype Was Implemented in Flutter
