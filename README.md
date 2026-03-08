@@ -95,3 +95,90 @@ This ensured the design looked and behaved similarly across devices while preser
 ## Conclusion
 
 By translating the Figma prototype into modular Flutter widgets and using responsive layout techniques, the UI maintained visual consistency, adaptability, and usability across multiple devices. This approach ensured that the application design remained clean and functional regardless of screen size or platform.
+
+## 📱 Features
+
+- User Authentication (Email/Password)
+- User Profiles in Firestore
+- Transaction Tracking
+- Responsive Design (Mobile & Tablet)
+- Real-time Data Synchronization
+
+## 🚀 Quick Start
+
+```bash
+flutter pub get
+flutter run
+```
+
+## 🔥 Firebase Setup
+
+1. Create project at [Firebase Console](https://console.firebase.google.com/)
+2. Enable Authentication (Email/Password) & Firestore Database
+3. Install FlutterFire CLI:
+   ```bash
+   dart pub global activate flutterfire_cli
+   flutterfire configure
+   ```
+4. Add dependencies to `pubspec.yaml`:
+   ```yaml
+   firebase_core: ^3.9.0
+   firebase_auth: ^5.3.4
+   cloud_firestore: ^5.5.2
+   ```
+
+## 💻 Code Snippets
+
+**Firebase Initialization:**
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
+}
+```
+
+**Authentication:**
+```dart
+// Sign up
+final user = await _auth.createUserWithEmailAndPassword(
+  email: email, password: password
+);
+
+// Login
+final user = await _auth.signInWithEmailAndPassword(
+  email: email, password: password
+);
+```
+
+**Firestore Operations:**
+```dart
+// Create/Update
+await _db.collection('users').doc(uid).set(data);
+
+// Read
+final doc = await _db.collection('users').doc(uid).get();
+
+// Real-time stream
+_db.collection('users').doc(uid).snapshots();
+```
+
+## 💭 Reflection
+
+**How Firebase Simplifies Backend:**
+- No server setup - Authentication and database ready out-of-the-box
+- Real-time sync - Automatic data updates across devices
+- Built-in security - Firebase Rules handle access control
+- Auto-scaling - No configuration needed
+- Cross-platform - Same backend for Android, iOS, Web
+
+**Key Learnings:**
+1. Async programming with `async/await` for cloud operations
+2. Real-time streams with `StreamBuilder` for reactive UI
+3. Platform-specific Firebase configuration
+4. Proper error handling with `FirebaseAuthException`
+5. NoSQL data modeling vs SQL databases
+6. Security Rules are essential for production
+7. Authentication state triggers automatic UI updates
