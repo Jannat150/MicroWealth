@@ -199,3 +199,48 @@ _db.collection('users').doc(uid).snapshots();
 ## Reflection
 
 During installation I faced some issues with Flutter PATH configuration and emulator setup. After installing Android Studio and running flutter doctor, the issues were resolved. This setup prepares me to build, run, and test Flutter applications efficiently on an Android emulator.
+
+
+## 📸 Screenshots
+
+### Folder Structure in IDE
+*Screenshot showing the complete project hierarchy in VS Code/Android Studio*
+
+![Project Folder Structure](screenshots/folder_structure.png)
+
+### Firebase Console
+*Screenshots of Firebase Authentication and Firestore Database*
+
+![Firebase Authentication](screenshots/firebase_auth.png)
+![Firestore Database](screenshots/firestore_db.png)
+
+---
+
+## 🏗️ Architecture Reflection
+
+### Why is understanding each folder's purpose important?
+
+1. **Faster Debugging**: When authentication fails, you know to check `lib/services/auth_service.dart`, not the entire codebase
+2. **Onboarding New Developers**: Clear structure helps team members understand the project within hours, not days
+3. **Code Quality**: Separation prevents mixing UI code with business logic, making code easier to test
+4. **Platform-Specific Issues**: Android build errors? Check `android/`. iOS permissions? Check `ios/Info.plist`
+5. **Dependency Management**: All packages declared in one place (`pubspec.yaml`) prevents version conflicts
+
+### How does organized structure improve teamwork and development speed?
+
+**Teamwork Benefits:**
+- **Parallel Development**: One developer works on UI (`screens/`), another on backend (`services/`)
+- **Code Reviews**: Easier to review small, focused files than monolithic code
+- **Ownership**: Teams can own specific folders (Mobile team → `android/ios/`, Backend → `services/`)
+- **Less Conflicts**: Modular structure reduces Git merge conflicts
+
+**Development Speed:**
+- **Reusability**: Widgets in `widgets/` folder can be reused across screens (DRY principle)
+- **Quick Navigation**: Need to modify login? → `screens/login_screen.dart` (no searching)
+- **Isolated Changes**: Update Firestore service without touching UI code
+- **Testing**: Well-organized code is easier to unit test, catching bugs early
+
+**Real Example from MicroWealth:**
+- Changed authentication logic in `auth_service.dart` → No UI code needed modification
+- Added new transaction feature → Created `models/transaction_model.dart` and `services/` → Screens just imported it
+- Fixed Android permissions → Only modified `AndroidManifest.xml`, no Dart code touched
