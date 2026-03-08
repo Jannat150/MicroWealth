@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "606464343723",
+    "project_id": "fir-series-3ff63",
+    "storage_bucket": "fir-series-3ff63.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606464343723:android:6e8fbd391e026b453341ee",
+        "android_client_info": {
+          "package_name": "com.example.microwealth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA90mP6uf3w--9f1QTuo76hc8WZo7PdC10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606464343723:android:0d606a7a602a59063341ee",
+        "android_client_info": {
+          "package_name": "com.example.my_first_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA90mP6uf3w--9f1QTuo76hc8WZo7PdC10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

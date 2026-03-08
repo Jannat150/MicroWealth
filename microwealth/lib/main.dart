@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'firebase_options.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/responsive_home.dart';
+import 'screens/login_screen.dart';
+import 'screens/signup_screen.dart';
 
-void main() {
+void main() async {
+  // Ensures Flutter is initialized before Firebase
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize Firebase with platform-specific configuration
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  
   runApp(const MyApp());
 }
 
@@ -14,25 +28,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MicroWealth',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.green,
+        useMaterial3: true,
       ),
-      home: ResponsiveHome(),
+      // Start with login screen
+      home: LoginScreen(),
+      // Define routes for navigation
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/signup': (context) => SignupScreen(),
+        '/home': (context) => ResponsiveHome(),
+        '/welcome': (context) => WelcomeScreen(),
+      },
     );
   }
 }

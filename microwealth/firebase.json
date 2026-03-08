@@ -1,0 +1,35 @@
+{
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    }
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "fir-series-3ff63",
+          "appId": "1:606464343723:android:6e8fbd391e026b453341ee",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "fir-series-3ff63",
+          "configurations": {
+            "android": "1:606464343723:android:6e8fbd391e026b453341ee",
+            "ios": "1:606464343723:ios:82b29c76437ca0083341ee",
+            "web": "1:606464343723:web:0727f17ce1e8b5333341ee"
+          }
+        }
+      }
+    }
+  }
+}
