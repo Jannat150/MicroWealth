@@ -182,3 +182,20 @@ _db.collection('users').doc(uid).snapshots();
 5. NoSQL data modeling vs SQL databases
 6. Security Rules are essential for production
 7. Authentication state triggers automatic UI updates
+
+# Flutter Environment Setup and First App Run
+
+## Steps Followed
+
+1. Installed Flutter SDK
+2. Added Flutter to system PATH
+3. Installed Android Studio
+4. Installed Flutter and Dart plugins
+5. Created Android Emulator
+6. Created first Flutter app using `flutter create`
+7. Ran app using `flutter run`
+
+
+## Reflection
+
+During installation I faced some issues with Flutter PATH configuration and emulator setup. After installing Android Studio and running flutter doctor, the issues were resolved. This setup prepares me to build, run, and test Flutter applications efficiently on an Android emulator.
