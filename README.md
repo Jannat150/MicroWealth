@@ -529,3 +529,38 @@ setState(() {
 - After success, entire screen rebuilds to ResponsiveHome
 - Total rebuilds: 3 (loading start, loading end, navigation) vs constant manual updates
 
+# Stateless vs Stateful Widgets Demo
+
+## Description
+This Flutter demo shows the difference between Stateless and Stateful widgets.
+
+## Stateless Widget
+A Stateless widget does not change after it is built. It is used for static UI elements like text, icons, or headers.
+
+Example:
+class HeaderWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Text("Interactive Counter App");
+  }
+}
+
+## Stateful Widget
+A Stateful widget can change during runtime. It updates the UI when state changes using setState().
+
+Example:
+class CounterWidget extends StatefulWidget {
+  @override
+  State<CounterWidget> createState() => _CounterWidgetState();
+}
+
+## Screenshots
+Initial UI:
+(Add screenshot)
+
+After Button Click:
+(Add screenshot)
+
+## Reflection
+Stateful widgets make Flutter apps dynamic because they allow the UI to update when data changes. Stateless widgets are useful for static parts of the UI, while Stateful widgets handle user interaction and dynamic content.
+
