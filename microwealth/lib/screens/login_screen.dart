@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
-import 'signup_screen.dart';
-import 'responsive_home.dart';
 
 /// Login screen for existing users
 class LoginScreen extends StatefulWidget {
@@ -44,10 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (user != null) {
       _showMessage('Login successful!');
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => ResponsiveHome()),
-      );
+      Navigator.pushReplacementNamed(context, '/home');
     } else {
       _showMessage('Login failed. Check your credentials.');
     }
@@ -161,10 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text("Don't have an account? "),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignupScreen()),
-                      );
+                      Navigator.pushReplacementNamed(context, '/signup');
                     },
                     child: Text('Sign Up'),
                   ),

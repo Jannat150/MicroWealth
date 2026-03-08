@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
-import 'login_screen.dart';
 
 class ResponsiveHome extends StatefulWidget {
   @override
@@ -45,10 +44,7 @@ class _ResponsiveHomeState extends State<ResponsiveHome> {
     
     if (!mounted) return;
     
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),
-    );
+    Navigator.pushReplacementNamed(context, '/login');
   }
 
   @override

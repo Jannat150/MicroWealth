@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
-import 'login_screen.dart';
-import 'responsive_home.dart';
 
 /// Signup screen for new user registration
 class SignupScreen extends StatefulWidget {
@@ -55,10 +53,7 @@ class _SignupScreenState extends State<SignupScreen> {
       _showMessage('Account created successfully!');
       
       // Navigate to home screen
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => ResponsiveHome()),
-      );
+      Navigator.pushReplacementNamed(context, '/home');
     } catch (e) {
       setState(() => _isLoading = false);
       if (!mounted) return;
@@ -181,10 +176,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   Text('Already have an account? '),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                      );
+                      Navigator.pushReplacementNamed(context, '/login');
                     },
                     child: Text('Login'),
                   ),
