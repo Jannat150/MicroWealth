@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/responsive_home.dart';
 import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
+import 'screens/stateless_stateful_demo.dart';
 
 void main() async {
   // Ensures Flutter is initialized before Firebase
@@ -41,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => SignupScreen(),
         '/home': (context) => ResponsiveHome(),
         '/welcome': (context) => WelcomeScreen(),
+        '/stateless-stateful-demo': (context) => StatelessStatefulDemo(),
       },
     );
   }
