@@ -564,3 +564,33 @@ After Button Click:
 ## Reflection
 Stateful widgets make Flutter apps dynamic because they allow the UI to update when data changes. Stateless widgets are useful for static parts of the UI, while Stateful widgets handle user interaction and dynamic content.
 
+
+# Multi-Screen Navigation Using Navigator and Routes
+
+## Description
+This Flutter project demonstrates navigation between multiple screens using Navigator and named routes.
+
+## Screens
+
+HomeScreen – Contains a button to navigate to SecondScreen.
+
+SecondScreen – Displays a message and allows returning to HomeScreen.
+
+## Navigation Example
+
+Navigator.pushNamed(context, '/second');
+
+Navigator.pop(context);
+
+## Routes in main.dart
+
+routes: {
+  '/navhome': (context) => HomeScreen(),
+  '/second': (context) => SecondScreen(),
+}
+
+## Reflection
+
+Navigator manages the app’s screen stack. When Navigator.pushNamed() is used, a new screen is added to the stack. Navigator.pop() removes the current screen and returns to the previous one.
+
+Named routes help organize navigation in large apps because screens can be accessed using route names instead of direct widget references.
