@@ -9,6 +9,8 @@ import 'screens/stateless_stateful_demo.dart';
 import 'screens/scrollable_views.dart';
 import 'screens/user_input_form.dart';
 import 'screens/state_management_demo.dart';
+import 'screens/home_screen.dart';
+import 'screens/details_screen.dart';
 
 void main() async {
   // Ensures Flutter is initialized before Firebase
@@ -47,6 +49,8 @@ class MyApp extends StatelessWidget {
         '/scrollable-views': (context) => ScrollableViews(),
         '/user-input-form': (context) => UserInputForm(),
         '/state-management-demo': (context) => StateManagementDemo(),
+        '/homescreen': (context) => HomeScreen(),
+        '/details': (context) => DetailsScreen(),
       },
     );
   }
