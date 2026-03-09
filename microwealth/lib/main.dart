@@ -6,6 +6,7 @@ import 'screens/responsive_home.dart';
 import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
 import 'screens/stateless_stateful_demo.dart';
+import 'screens/scrollable_views.dart';
 
 void main() async {
   // Ensures Flutter is initialized before Firebase
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         useMaterial3: true,
       ),
-      // Start with login screen
-      home: LoginScreen(),
+      // Use initialRoute instead of home for web deep linking
+      initialRoute: '/login',
       // Define routes for navigation
       routes: {
         '/login': (context) => LoginScreen(),
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => ResponsiveHome(),
         '/welcome': (context) => WelcomeScreen(),
         '/stateless-stateful-demo': (context) => StatelessStatefulDemo(),
+        '/scrollable-views': (context) => ScrollableViews(),
       },
     );
   }

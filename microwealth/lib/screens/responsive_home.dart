@@ -72,6 +72,87 @@ class _ResponsiveHomeState extends State<ResponsiveHome> {
         ],
       ),
 
+      // Add navigation drawer
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.green,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(
+                    Icons.account_balance_wallet,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'MicroWealth',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    userName ?? userEmail ?? '',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Dashboard'),
+              onTap: () {
+                Navigator.pop(context); // Close drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.waving_hand),
+              title: Text('Welcome Screen'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/welcome');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.code),
+              title: Text('Stateless/Stateful Demo'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/stateless-stateful-demo');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.view_list),
+              title: Text('Scrollable Views'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/scrollable-views');
+              },
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.logout, color: Colors.red),
+              title: Text('Logout', style: TextStyle(color: Colors.red)),
+              onTap: () {
+                Navigator.pop(context);
+                _handleLogout();
+              },
+            ),
+          ],
+        ),
+      ),
+
       body: Column(
         children: [
 
