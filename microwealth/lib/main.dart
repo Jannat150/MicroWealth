@@ -7,6 +7,7 @@ import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
 import 'screens/stateless_stateful_demo.dart';
 import 'screens/scrollable_views.dart';
+import 'screens/user_input_form.dart';
 
 void main() async {
   // Ensures Flutter is initialized before Firebase
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/welcome': (context) => WelcomeScreen(),
         '/stateless-stateful-demo': (context) => StatelessStatefulDemo(),
         '/scrollable-views': (context) => ScrollableViews(),
+        '/user-input-form': (context) => UserInputForm(),
       },
     );
   }
