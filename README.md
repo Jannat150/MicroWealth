@@ -818,3 +818,72 @@ They reduce code duplication and make the UI easier to maintain.
 * Faster development and easier updates
 
 
+# Flutter Animations & Transitions
+
+## Overview
+
+This project demonstrates how to add **animations and page transitions** in a Flutter app to improve user experience and interactivity. It uses Flutter’s built-in animation widgets to create smooth UI changes and navigation effects.
+
+---
+
+## AnimatedContainer Example
+
+```dart
+AnimatedContainer(
+  width: _toggled ? 200 : 100,
+  height: _toggled ? 100 : 200,
+  color: _toggled ? Colors.teal : Colors.orange,
+  duration: Duration(seconds: 1),
+  curve: Curves.easeInOut,
+)
+```
+
+This widget smoothly animates changes in **size and color** when the state changes.
+
+---
+
+## AnimatedOpacity Example
+
+```dart
+AnimatedOpacity(
+  opacity: _toggled ? 1.0 : 0.2,
+  duration: Duration(seconds: 1),
+  child: Image.asset('assets/images/logo.png'),
+)
+```
+
+Creates a **fade-in / fade-out effect** for UI elements.
+
+---
+
+## Page Transition Example
+
+```dart
+Navigator.push(
+  context,
+  PageRouteBuilder(
+    transitionDuration: Duration(milliseconds: 700),
+    pageBuilder: (context, animation, secondaryAnimation) => NextPage(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return SlideTransition(
+        position: Tween<Offset>(
+          begin: Offset(1.0, 0.0),
+          end: Offset.zero,
+        ).animate(animation),
+        child: child,
+      );
+    },
+  ),
+);
+```
+
+Adds a **smooth slide transition** between screens.
+
+---
+
+## Reflection
+
+Animations improve UX by making interactions **smoother, clearer, and more engaging**.
+Implicit animations (like `AnimatedContainer`) are simple and automatic, while explicit animations use `AnimationController` for **more control and complex effects**.
+
+
