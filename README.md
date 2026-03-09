@@ -594,3 +594,74 @@ routes: {
 Navigator manages the app’s screen stack. When Navigator.pushNamed() is used, a new screen is added to the stack. Navigator.pop() removes the current screen and returns to the previous one.
 
 Named routes help organize navigation in large apps because screens can be accessed using route names instead of direct widget references.
+
+# 📱 Scrollable Views in Flutter
+
+## Overview
+
+This screen demonstrates how to create **scrollable user interfaces in Flutter** using **ListView** and **GridView**.
+The layout contains a **horizontal ListView** displaying cards and a **GridView** showing items in a grid format.
+
+---
+
+## ListView Implementation
+
+```dart
+ListView.builder(
+  scrollDirection: Axis.horizontal,
+  itemCount: 6,
+  itemBuilder: (context, index) {
+    return Container(
+      width: 120,
+      margin: EdgeInsets.all(8),
+      child: Center(
+        child: Text("Card $index"),
+      ),
+    );
+  },
+)
+```
+
+**Purpose:**
+ListView is used to display a **scrollable list of items**, useful for feeds, messages, or product lists.
+
+---
+
+## GridView Implementation
+
+```dart
+GridView.builder(
+  shrinkWrap: true,
+  physics: NeverScrollableScrollPhysics(),
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,
+    crossAxisSpacing: 10,
+    mainAxisSpacing: 10,
+  ),
+  itemCount: 8,
+  itemBuilder: (context, index) {
+    return Container(
+      child: Center(
+        child: Text("Item $index"),
+      ),
+    );
+  },
+)
+```
+
+**Purpose:**
+GridView displays items in a **grid layout**, commonly used for galleries or dashboards.
+
+---
+
+## Reflection
+
+**Why use ListView and GridView?**
+They allow users to scroll through large amounts of data efficiently while maintaining a clean and organized UI.
+
+**Why use builder constructors?**
+`ListView.builder` and `GridView.builder` create widgets **only when needed**, improving performance for large datasets.
+
+**Performance considerations:**
+Avoid nesting multiple scroll views unnecessarily and use builder constructors for dynamic or large lists.
+
