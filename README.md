@@ -758,3 +758,63 @@ It allows Flutter to rebuild only the affected widget parts when data changes, e
 Using `setState()` incorrectly or too frequently can cause unnecessary rebuilds, which may affect app performance.
 
 
+# Reusable Custom Widgets in Flutter
+
+## Overview
+
+This task demonstrates how to create and reuse **custom widgets in Flutter** to build modular and maintainable UI components.
+A reusable **CustomButton widget** was created and used across multiple screens to avoid repeating the same UI code.
+
+---
+
+## Custom Widget Example
+
+```dart
+class CustomButton extends StatelessWidget {
+  final String label;
+  final VoidCallback onPressed;
+
+  const CustomButton({
+    required this.label,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text(label),
+    );
+  }
+}
+```
+
+---
+
+## Usage Example
+
+```dart
+CustomButton(
+  label: "Go to Details",
+  onPressed: () {
+    Navigator.pushNamed(context, '/details');
+  },
+)
+```
+
+The same widget can be reused in multiple screens with different labels and actions.
+
+---
+
+## Reflection
+
+**Why reusable widgets are important**
+They reduce code duplication and make the UI easier to maintain.
+
+**Benefits**
+
+* Cleaner code structure
+* Consistent design across screens
+* Faster development and easier updates
+
+
