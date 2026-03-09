@@ -11,6 +11,7 @@ import 'screens/user_input_form.dart';
 import 'screens/state_management_demo.dart';
 import 'screens/home_screen.dart';
 import 'screens/details_screen.dart';
+import 'screens/animation_demo.dart';
 
 void main() async {
   // Ensures Flutter is initialized before Firebase
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/state-management-demo': (context) => StateManagementDemo(),
         '/homescreen': (context) => HomeScreen(),
         '/details': (context) => DetailsScreen(),
+        '/animation-demo': (context) => AnimationDemo(),
       },
     );
   }
