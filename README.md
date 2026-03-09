@@ -715,3 +715,46 @@ It ensures users provide correct and complete data before submitting the form.
 Using `GlobalKey<FormState>` helps manage and validate all input fields together efficiently.
 
 
+# State Management with setState in Flutter
+
+## Overview
+
+This screen demonstrates **basic state management in Flutter using `setState()`**.
+A simple counter app updates the UI dynamically when the user presses **Increment** or **Decrement** buttons.
+
+---
+
+## Example Implementation
+
+```dart
+int _counter = 0;
+
+void _incrementCounter() {
+  setState(() {
+    _counter++;
+  });
+}
+
+void _decrementCounter() {
+  setState(() {
+    if (_counter > 0) _counter--;
+  });
+}
+```
+
+`setState()` notifies Flutter that the widget’s state has changed, causing the UI to rebuild and display the updated value.
+
+---
+
+## Reflection
+
+**Stateless vs Stateful Widgets**
+`StatelessWidget` does not change after it is built, while `StatefulWidget` can update dynamically based on user interaction or data changes.
+
+**Why is setState important?**
+It allows Flutter to rebuild only the affected widget parts when data changes, enabling responsive and interactive UI updates.
+
+**Performance consideration**
+Using `setState()` incorrectly or too frequently can cause unnecessary rebuilds, which may affect app performance.
+
+
